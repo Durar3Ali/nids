@@ -15,11 +15,26 @@ nids/
 │   ├── optimized_lightgbm.txt   # Native LightGBM configuration file (engine-agnostic)
 │   └── scaler.joblib            # Serialized Scikit-Learn standardizer matrix
 │
-│
 ├── app.py                       # Demonstration interface code
-├── requirements.txt             # Platform-agnostic execution dependencies
-└── README.md                    # System documentation and analysis
+├── README.md                    # System documentation and analysis
+└── requirements.txt             # Platform-agnostic execution dependencies
 ```
+
+---
+
+## System Architecture & Interface Demonstration
+
+### Real-Time Validation Dashboard
+The integrated frontend application provides a concrete interface for evaluating system behavior under varying packet characteristics. It accepts incoming network flow metrics and displays categorical alert assessments along with underlying classifier probabilities.
+
+#### Application Interface Profiles
+Below are operational layout reference views tracking baseline packet evaluations inside the evaluation workspace:
+
+![Safe Traffic Interface Profile](image/demo_image1.png)
+*Figure 1: Demonstration system classifying routine, low-risk network metadata flows.*
+
+![Malicious Attack Alert Profile](image/demo_image2.png)
+*Figure 2: Active threat classification tracking an anomalous network exploit metric signature.*
 
 ---
 
@@ -66,6 +81,12 @@ Following structural optimization, the fine-tuned framework was executed once ag
 ### Operational Statistics
 * **Area Under the ROC Curve (ROC-AUC):** 0.9893 (Confirming robust separation behavior under high feature variance).
 * **Detection Recall (Class 1):** 99.99% (Reducing the critical system bypass rate down to 1 single missed intrusion instance out of 23,869 actual test samples).
+
+### Classifier Separation Boundary
+
+![Receiver Operating Characteristic Curve](image/roc_curve.png)
+*Figure 3: Out-of-sample Receiver Operating Characteristic (ROC) curve outlining class separation performance.*
+
 * **Architectural Trade-Off Assessment:** Optimizing boundaries to register stealthy, low-volume anomalies generated an increase in false alarms (2,317 False Positives). In production network administration, minimizing False Negatives is prioritized over minimizing False Positives; reviewing a false alarm is computationally and operationally manageable, whereas failing to detect an active system breach introduces systemic security risks.
 
 ---
@@ -82,7 +103,7 @@ Following structural optimization, the fine-tuned framework was executed once ag
 1. Clone the repository structure locally:
    ```bash
    git clone https://github.com
-   cd nids-classifier
+   cd nids
    ```
 
 2. Standardize local execution environments:
